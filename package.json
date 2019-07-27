@@ -1,0 +1,22 @@
+{
+  "name": "opendir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovsoinc/opendir.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ovsoinc/opendir/issues"
+  },
+  "homepage": "https://github.com/ovsoinc/opendir#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

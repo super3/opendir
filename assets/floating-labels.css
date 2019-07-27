@@ -83,6 +83,9 @@ body {
 .list-group {
   padding-bottom: 15px;
 }
+.icon-pad {
+  margin-right: 5px;
+}
 
 /* Fallback for Edge
 -------------------------------------------------- */
