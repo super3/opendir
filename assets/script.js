@@ -24,14 +24,15 @@ function getDirectories(path = "/") {
       document.querySelector("#dir-list").appendChild(li);
     }
 
+    res.sort();
+
     res.forEach((dir) => {
-      console.log(dir)
+
       const li = document.createElement("li");
       const span = document.createElement("span");
       const i = document.createElement("i");
       const a = document.createElement("a");
 
-      console.log(path);
       if(path !== "/" && path !== "") {
         a.href = `${path}/${dir}`;
       } else {
