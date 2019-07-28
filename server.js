@@ -10,10 +10,11 @@ const app = new Koa();
 const router = new Router();
 
 router.get('/directories', async ctx => {
-  const contentDir = await fs.readdir("./content");
+  const target = typeof ctx.query.path === "string" ? ctx.query.path : "/";
+  const contentDir = await fs.readdir(path.join("./content", target));
 
   let directories = contentDir.map(async dir => {
-    const stats = await fs.lstat(path.resolve("./content", dir));
+    const stats = await fs.lstat(path.join("./content", target, dir));
     if (stats.isFile()) {
       return (dir);
     }
