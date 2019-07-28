@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ovsoinc/opendir#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
   }
 }
