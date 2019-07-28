@@ -2,7 +2,7 @@ function getDirectories(path = "/") {
   fetch(`/directories?path=${path}`).then((res) => res.json()).then((res) => {
     document.querySelector("#dir-list").innerHTML = "";
 
-    if(path !== "/") {
+    if(path !== "/" && path !== "") {
       const li = document.createElement("li");
       const span = document.createElement("span");
       const i = document.createElement("i");
@@ -31,7 +31,12 @@ function getDirectories(path = "/") {
       const i = document.createElement("i");
       const a = document.createElement("a");
 
-      a.href = `.${path}/${dir}`;
+      console.log(path);
+      if(path !== "/" && path !== "") {
+        a.href = `${path}/${dir}`;
+      } else {
+        a.href = `${path}${dir}`;
+      }
 
       if(dir.startsWith('/')) {
         a.onclick = () => {
