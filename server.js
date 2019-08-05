@@ -4,10 +4,9 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const serve = require('koa-static');
 
-const port = process.env.PORT || 8000;
 const app = new Koa();
-
 const router = new Router();
+const port = process.env.PORT || 8000;
 
 router.get('/directories', async ctx => {
 	const target = typeof ctx.query.path === 'string' ? ctx.query.path : '/';
@@ -23,7 +22,6 @@ router.get('/directories', async ctx => {
 	});
 
 	directories = await Promise.all(directories);
-
 	ctx.body = JSON.stringify(directories);
 });
 
