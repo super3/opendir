@@ -24,7 +24,10 @@ function addItem(dir, path = '') {
 		a.href = '#';
 	}
 
+	console.log(`${dir} - ${path}`);
+
 	if (dir === '..') {
+		console.log(`${path.split('/').slice(0, -1).join('/')}`);
 		a.addEventListener('click', () => {
 			getDirectories(`${path.split('/').slice(0, -1).join('/')}`);
 		});
@@ -42,11 +45,13 @@ function addItem(dir, path = '') {
 	document.querySelector('#dir-list').append(li);
 }
 
-function getDirectories(path = '/') {
+function getDirectories(path = '') {
 	fetch(`/directories?path=${path}`).then(res => res.json()).then(res => {
 		clearItems();
 
-		addItem('..');
+		if (path !== '/' && path !== '') {
+			addItem('..');
+		}
 
 		res.sort();
 
