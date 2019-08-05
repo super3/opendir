@@ -1,3 +1,5 @@
+/* global document, fetch */
+
 function clearItems() {
 	document.querySelector('#dir-list').innerHTML = '';
 }
@@ -9,22 +11,22 @@ function addItem(dir, path = '') {
 	const a = document.createElement('a');
 
 	if (path !== '/' && path !== '') {
-	  a.href = `${path}/${dir}`;
+		a.href = `${path}/${dir}`;
 	} else {
-	  a.href = `${path}${dir}`;
+		a.href = `${path}${dir}`;
 	}
 
 	if (dir.startsWith('/')) {
-	  a.addEventListener('click', () => {
+		a.addEventListener('click', () => {
 			getDirectories(`${path}${dir}`);
-	  });
+		});
 
-	  a.href = '#';
+		a.href = '#';
 	}
 
 	if (dir === '..') {
 		a.addEventListener('click', () => {
-		  getDirectories(`${path.split('/').slice(0, -1).join('/')}`);
+			getDirectories(`${path.split('/').slice(0, -1).join('/')}`);
 		});
 
 		a.href = '#';
