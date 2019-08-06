@@ -24,10 +24,9 @@ function addItem(dir, path = '') {
 		a.href = '#';
 	}
 
-	console.log(`${dir} - ${path}`);
+	console.log(`dir(${dir}) - path(${path})`);
 
 	if (dir === '..') {
-		console.log(`${path.split('/').slice(0, -1).join('/')}`);
 		a.addEventListener('click', () => {
 			getDirectories(`${path.split('/').slice(0, -1).join('/')}`);
 		});
@@ -50,7 +49,7 @@ function getDirectories(path = '') {
 		clearItems();
 
 		if (path !== '/' && path !== '') {
-			addItem('..');
+			addItem('..', path);
 		}
 
 		res.sort();
