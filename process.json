@@ -1,0 +1,58 @@
+{
+	apps: [
+		{
+			name: "server-01",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+	          "NODE_ENV": "production",
+			  "PORT": 8001
+	        }
+		},
+		{
+			name: "server-02",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+	          "NODE_ENV": "production",
+			  "PORT": 8002
+	        }
+		},
+		{
+			name: "server-03",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+			  "NODE_ENV": "production",
+			  "PORT": 8003
+			}
+		},
+		{
+			name: "server-04",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+			  "NODE_ENV": "production",
+			  "PORT": 8004
+			}
+		},
+		{
+			name: "server-05",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+			  "NODE_ENV": "production",
+			  "PORT": 8005
+			}
+		},
+		{
+			name: "server-06",
+			script: "server.js",
+			max_memory_restart: "512M",
+			env: {
+			  "NODE_ENV": "production",
+			  "PORT": 8006
+			}
+		}
+	]
+}
